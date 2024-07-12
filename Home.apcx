@@ -51,6 +51,16 @@ System.out.println("YEAR "+simpleDateFormat.format(date).toUpperCase());
 
 SimpleDateFormat objSDF1 = new SimpleDateFormat("dd-mm-yyyy");
 
+/*************************************************
+Date date = new Date();
+LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+int year  = localDate.getYear();
+int month = localDate.getMonthValue();
+int day   = localDate.getDayOfMonth();
+System.out.println("year : " + year);
+System.out.println("Month : " + month);
+System.out.println("day : " + day);
+/************************************************
 Date dt_1 = objSDF1.parse("20-08-1981");
 Date dt_2 = objSDF1.parse("20-08-1981");
 //Date dt_2 = objSDF1.parse("12-10-2012");
@@ -58,10 +68,7 @@ Date dt_2 = objSDF1.parse("20-08-1981");
 System.out.println("Date1 : " + objSDF.format(dt_1));
 System.out.println("Date2 : " + objSDF.format(dt_2));
 
-if(dt_1.equals(dt_2))
-System.out.println("Dates are equal");
-else
-System.out.println("Dates are not equal");
+
 
 }
 
