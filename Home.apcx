@@ -1,0 +1,76 @@
+package Comm_Demo;
+
+import java.text.SimpleDateFormat;
+import java.text.ParseException;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
+
+public class Date_Functions {
+
+public static void main(String[] args) throws ParseException {
+// TODO Auto-generated method stub
+Date today_date = new Date();
+System.out.println("Today's Date is : " + new Date());
+
+System.out.println("Today's Date is : " + today_date);
+
+Date New_date = new Date(24-06-17);
+System.out.println("New Date is : " + New_date);
+
+SimpleDateFormat simpleDateFormat100 = new SimpleDateFormat("D");
+System.out.println("Days in YEAR : "+ simpleDateFormat100.format(today_date).toUpperCase()); //days in year
+simpleDateFormat100 = new SimpleDateFormat("EEEE");
+System.out.println("Days in Week :  "+simpleDateFormat100.format(today_date).toUpperCase()); //days in week
+
+String strDateFormat = "hh:mm:ss a dd-MMM-yyyy"; //Date format is Specified
+SimpleDateFormat objSDF = new SimpleDateFormat(strDateFormat); //Date format string is passed as an argument to the Date format object
+System.out.println(objSDF.format(today_date));//Date formatting is applied to the current date
+
+//System.out.println("Month is = " + objSDF.format(getmonth(today_date))); // get month of date
+
+
+Date date = new Date();
+LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+int year  = localDate.getYear();
+int month = localDate.getMonthValue();
+int day   = localDate.getDayOfMonth();
+System.out.println("year : " + year);
+System.out.println("Month : " + month);
+System.out.println("day : " + day);
+
+SimpleDateFormat simpleDateFormat = new SimpleDateFormat("EEEE");
+
+System.out.println("DAY "+simpleDateFormat.format(date).toUpperCase());
+
+simpleDateFormat = new SimpleDateFormat("MMMM");
+System.out.println("MONTH "+simpleDateFormat.format(date).toUpperCase());
+
+simpleDateFormat = new SimpleDateFormat("YYYY");
+System.out.println("YEAR "+simpleDateFormat.format(date).toUpperCase());
+
+SimpleDateFormat objSDF1 = new SimpleDateFormat("dd-mm-yyyy");
+
+/*************************************************
+Date date = new Date();
+LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+int year  = localDate.getYear();
+int month = localDate.getMonthValue();
+int day   = localDate.getDayOfMonth();
+System.out.println("year : " + year);
+System.out.println("Month : " + month);
+System.out.println("day : " + day);
+/************************************************
+Date dt_1 = objSDF1.parse("20-08-1981");
+Date dt_2 = objSDF1.parse("20-08-1981");
+//Date dt_2 = objSDF1.parse("12-10-2012");
+
+System.out.println("Date1 : " + objSDF.format(dt_1));
+System.out.println("Date2 : " + objSDF.format(dt_2));
+
+
+
+}
+
+}
+
